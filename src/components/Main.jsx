@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Items from "./Items";
-
+import AddIcon from '@mui/icons-material/Add';
+import Button from '@mui/material/Button';
 
 const Main = () => {
 
@@ -36,7 +37,7 @@ const Main = () => {
         setItems((oldItems)=>{
             return oldItems.filter((arrElem,index)=>{
                 // arrElem,index ==>> current element and its index
-                return index!=id;
+                return index!==id;
                 // return false for all index which has not to be deleted
             });
         });
@@ -50,8 +51,12 @@ const Main = () => {
             <br />
             
                 <div className="field">
-                    <input type="text" className="enter" name="content" placeholder="Write Here" value={content} onChange={change}/>
-                    <button type="submit" className="add" onClick={listofItem}>+</button>
+                    <input type="text" className="enter" 
+                    name="content" placeholder="Write Here"
+                     value={content} onChange={change}/>
+                    {/* <Button></Button><AddIcon/> */}
+                    {/* <button type="submit" className="add" onClick={listofItem}><AddIcon/></button> */}
+                    <Button className="add" onClick={listofItem}><AddIcon/></Button>
                 </div>
             
             <ul className="Mainlist">
